@@ -15,6 +15,8 @@ function I= trapecio_compuesto(f,a,b,N)
     %Ejemplo de Implementacion:
     %            trapecio_compuesto(log(x),2,5,4)
     %
+    
+    warning('off')
     pkg load symbolic
     h=(b-a)/(N-1);
     valores =[a];
@@ -33,11 +35,11 @@ function I= trapecio_compuesto(f,a,b,N)
     i=length(s);
     j=1;
     ev=[];
-    sa=abs(dfs(a));
-    sb=abs(dfs(b));
+    sa=abs(double(dfs(a)));
+    sb=abs(double(dfs(b)));
     ev=[ev sa sb];
     while (j<i)
-        si=f1(s(i));
+        si=abs(double(dfs(s(j))));
         ev=[ev si];
         j=j+1;
     endwhile

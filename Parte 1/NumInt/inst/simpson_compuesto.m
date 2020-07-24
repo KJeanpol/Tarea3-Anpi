@@ -15,6 +15,7 @@ function I= simpson_compuesto(f,a,b,N)
     %Ejemplo de Implementacion:
     %            simpson_compuesto(log(x),2,5,7)
     
+    warning('off')
     pkg load symbolic
     format long;
     h=(b-a)/(N-1);
@@ -36,13 +37,13 @@ function I= simpson_compuesto(f,a,b,N)
     i=length(s);
     j=1;
     ev=[];
-    sa=abs(dfc(a));
-    sb=abs(dfc(b));
+    sa=abs(double(dfc(a)));
+    sb=abs(double(dfc(b)));
     ev=[ev sa sb];
     while (j<i)
-        j=j+1;
-        si=abs(dfc(s(j)));
+        si=abs(double(dfc(s(j))));
         ev=[ev si];
+        j=j+1;
     endwhile
     res=0;
     respar=0;

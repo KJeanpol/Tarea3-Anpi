@@ -14,6 +14,7 @@ function I= simpson(f,a,b,N)
     %Ejemplo de Implementacion:
     %            simpson(log(x),2,5)
     
+    warning('off')
     pkg load symbolic
     syms x;
     var= sym('x');
@@ -28,13 +29,13 @@ function I= simpson(f,a,b,N)
     i=length(s);
     j=1;
     ev=[];
-    sa=abs(dfc(a));
-    sb=abs(dfc(b));
+    sa=abs(double(dfc(a)));
+    sb=abs(double(dfc(b)));
     ev=[ev sa sb];
     while (j<=i)
-        j=j+1;
-        si=abs(dfc(s(i)));
+        si=abs(double(dfc(s(i))));
         ev=[ev si];
+        j=j+1;
     endwhile
     cota=((h**5/90)*max(ev));
     I = (h/3)*(f1(a)+4*f1(c)+f1(b));

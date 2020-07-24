@@ -14,7 +14,7 @@ function I= trapecio(f,a,b)
     %Ejemplo de Implementacion:
     %            trapecio(log(x),2,5)
     %
-
+    warning('off')
     pkg load symbolic
     syms x;
     var= sym('x');
@@ -25,15 +25,14 @@ function I= trapecio(f,a,b)
     i=length(s);
     j=1;
     ev=[];
-    sa=abs(dfs(a));
-    sb=abs(dfs(b));
+    sa=abs(double(dfs(a)));
+    sb=abs(double(dfs(b)));
     ev=[ev sa sb];
     while (j<=i)
-        j=j+1;
-        si=abs(dfs(s(i)));
+        si=abs(double(dfs(s(j))));
         ev=[ev si];
+        j=j+1;
     endwhile
     cota=((b-a)^3/12)*max(ev);
-    I = ((f1(b)+f1(a))*(b-a))/2;
-    
+    I = ((f1(b)+f1(a))*((b-a)/2));
 endfunction
