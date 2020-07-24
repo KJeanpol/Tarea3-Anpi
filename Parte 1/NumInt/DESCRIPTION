@@ -1,0 +1,12 @@
+Name: NumInt
+Version: 1.0.0
+Date: 2020-23-07
+Author: Kevin L. González <kevgonzalez@estudiantec.cr>
+Maintainer: Kevin L. González <kevgonzalez@estudiantec.cr>
+Title: Numeric Integration Package using Symbolic
+Description: Adds symbolic calculation to approximate the numerical value of the definite integral on the intervals [a,b] for the function f(x).
+Categories: symbolic, numerical integration
+Url: https://github.com/KJeanpol/Tarea3-Anpi
+Depends: octave (>= 4.2)
+SystemRequirements: python, sympy (>= 1.2), mpmath (>= 1.0)
+License: GPL-3.0-or-later
