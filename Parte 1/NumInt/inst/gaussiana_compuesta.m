@@ -24,7 +24,7 @@ function I=gaussiana_compuesta(f,a,b,M,N)
     warning('off')
     pkg load symbolic
     syms x;
-    [pol,ceros]=polinmio_legendre(M);
+    [pol,ceros]=polinomio_legendre(M);
     h=(b-a)/(N-1);
     valores =[a];
     atemp=a+h;
