@@ -5,7 +5,7 @@ function I = romberg(f,a,b,N)
     %Sintaxis: romberg(f,a,b,N)
     % 
     %Parámetros Iniciales: 
-    %            f = funcion a integrar
+    %            f = funcion a integrar (*NOTA* La funcion debe estar escrita en string.)
     %            a,b = intervalos de integracion para la funcion 
     %            N= numero de puntos
     %           
