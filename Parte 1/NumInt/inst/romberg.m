@@ -15,6 +15,7 @@ function I = romberg(f,a,b,N)
     %Ejemplo de Implementacion:
     %            romberg('log(x)',2,5,4)
 
+  warning('off');
   r(1,1) = (b - a) * (evaluate(f, a) + evaluate(f, b));
 
   for j = 2:N
