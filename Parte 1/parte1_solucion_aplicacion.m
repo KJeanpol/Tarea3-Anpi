@@ -1,0 +1,71 @@
+function parte1_solucion_aplicacion()
+  warning('off');
+  pkg load symbolic;
+  pkg load numint;
+  syms x;
+  func=((10*exp(-x))*(sin(2*pi*x))).^2;
+  display('Esta funcion imprime los resultados de utilizar')
+  display('los metodos del paquete NumInt para resolver el problema')
+  display('aplicado a la ingenieria que selecciono el grupo.')
+  display('El problema consiste en el contrar la integral de  [0,1/2] de la funcion:')
+  display(func)
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo del Trapecio')
+  a=trapecio(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo del Simpson')
+  a=simpson(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo del Trapecio Compuesto con 5 puntos')
+  a=trapecio_compuesto(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2,5);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo de Simpson Compuesto con 5 puntos')
+  a=trapecio_compuesto(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2,5);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo de Cuadratura Gaussiana con un polinomio de legendre de grado 2')
+  a=gaussiana(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2,2);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo de Cuadratura Gaussiana Compuesta con un polinomio de legendre de grado 2, con 5 puntos')
+  a=gaussiana_compuesta(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2,2,5);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+  display(' Utilizando el Metodo de Romberg con 5 puntos')
+  a=romberg(((10*exp(-x))*(sin(2*pi*x))).^2,0,1/2,5);
+  display(a) 
+  display(' ')  
+  display("--------------------------------------------------------")
+  display(' ')
+  display("--------------------------------------------------------")
+  display(' ')
+endfunction
