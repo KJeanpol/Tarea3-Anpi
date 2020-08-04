@@ -1,4 +1,4 @@
-function I= simpson(f,a,b,N)
+function I= simpson(f,a,b)
     %Esta función obtiene una aproximacion a la integral de la funcion f 
     %en el intervalo [a,b] utilizando la regla de simpson compuesta
     %
