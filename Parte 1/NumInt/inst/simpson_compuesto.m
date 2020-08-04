@@ -29,22 +29,6 @@ function I= simpson_compuesto(f,a,b,N)
     syms x;
     var= sym('x');
     f1= matlabFunction(sym(f));
-    dfp = matlabFunction(diff(sym(f1)));
-    dfs = matlabFunction(diff(sym(dfp)));
-    dft = matlabFunction(diff(sym(dfs)));
-    dfc = matlabFunction(diff(sym(dft)));
-    s=solve(dfc, x);
-    i=length(s);
-    j=1;
-    ev=[];
-    sa=abs(double(dfc(a)));
-    sb=abs(double(dfc(b)));
-    ev=[ev sa sb];
-    while (j<i)
-        si=abs(double(dfc(s(j))));
-        ev=[ev si];
-        j=j+1;
-    endwhile
     res=0;
     respar=0;
     resimpar=0;

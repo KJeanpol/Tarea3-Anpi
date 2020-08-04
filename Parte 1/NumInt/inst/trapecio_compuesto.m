@@ -29,20 +29,6 @@ function I= trapecio_compuesto(f,a,b,N)
     syms x;
     var= sym('x');
     f1= matlabFunction(sym(f));
-    dfp = matlabFunction(diff(sym(f1)));
-    dfs = matlabFunction(diff(sym(dfp)));
-    s=solve(dfs, x);
-    i=length(s);
-    j=1;
-    ev=[];
-    sa=abs(double(dfs(a)));
-    sb=abs(double(dfs(b)));
-    ev=[ev sa sb];
-    while (j<i)
-        si=abs(double(dfs(s(j))));
-        ev=[ev si];
-        j=j+1;
-    endwhile
     res=0;
     for i=(1:numel(valores))
         if(i==1 || i==(numel(valores)))
@@ -52,5 +38,4 @@ function I= trapecio_compuesto(f,a,b,N)
         endif
     endfor
     I= res*(h/2);
-    cota=((b-a)*(h**2)/12)*max(ev);
 endfunction
